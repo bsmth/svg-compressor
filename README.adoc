@@ -1,0 +1,42 @@
+= SVG Compressor
+
+A small Ruby script for compressing SVGs that contain base64 encoded PNGs
+
+== Installation
+
+To get started and download dependencies:
+
+```
+git clone git@github.com:bsmth/svg-compressor.git
+cd svg-compressor
+bundle install
+```
+
+The SVGO tool is also a prerequisite:
+
+```
+npm install -g svgo
+```
+
+To run from anywhere, add the script to your shell:
+
+```bash
+export PATH=$PATH:/path/to/svg-compressor
+```
+
+== Usage
+
+To recursively convert SVGs in all subdirectories, run:
+
+```bash
+svg-compressor.rb <quality>
+```
+
+The jpeg compression quality can be set using `quality` with an integer value of `1`-`100` (1 being lowest quality and highest compression rate).
+
+The SVG XML itself is then compressed and formatted using an https://github.com/tribune/svgo_wrapper[SVGO wrapper].
+
+
+== Reporting Bugs
+
+Please feel free to https://github.com/bsmth/svg-compressor/issues[open an issue] for :bug: or feature requests.
